@@ -8,10 +8,10 @@
 
     // Please replace your email address below in $recip_address field to start receiving form responses.
 
-    $recip_address = "example@website.com";
+    $recip_address = "somosmobility@gmail.com";
 
     // If you want to add multiple recipient, then you should uncomment two lines that are line no. 14 and 39. Change your e-mail ID in line no. 14
-    // $recip_address1 = "example2@website.com";
+    $recip_address1 = "contacto@somosmobility.com";
     $name    = strip_tags($_POST['name']); 
     $sub    = strip_tags($_POST['subject']);
     $email   = strip_tags($_POST['email']); 
@@ -36,7 +36,7 @@
     //Recipients
     $mail->setFrom($email, $name);
     $mail->addAddress($recip_address);   // Add a recipient
-    // $mail->addAddress($recip_address1);   // Add a recipient 
+    $mail->addAddress($recip_address1);   // Add a recipient 
 
     //Content
     $mail->Subject = $sub;

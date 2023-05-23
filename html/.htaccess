@@ -1,0 +1,5 @@
+# Habilitar el manejo de archivos PHP
+AddHandler application/x-httpd-php .php
+
+# Desactivar el seguimiento de archivos .htaccess
+Options -Indexes

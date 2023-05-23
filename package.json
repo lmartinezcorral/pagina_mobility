@@ -1,8 +1,8 @@
 {
-  "name": "wizixo",
+  "name": "somos mobility",
   "version": "2.0.0",
   "private": true,
-  "description": "creative multi-purpose template",
+  "description": "Rehabilitación Física, Terapia Física, Entrenamiento, Enfermería, Adulto Mayor, Fisioterapia",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

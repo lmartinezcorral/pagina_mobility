@@ -49,7 +49,7 @@
     if (!$mail->send()) {
       echo "<script>alert('Oops! Something went wrong, we couldn't send your message.')</script>";
     } else {
-      header("Location: ../../thank-you.html");
+      header("Location: ../../index.html");
       die();
     }
 ?>

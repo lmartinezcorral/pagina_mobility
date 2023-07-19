@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Información del Paciente</title>
+  <script>
+    function imprimirDatos() {
+      // Obtener los valores de los campos del formulario
+      var nombre = document.getElementById("nombre").value;
+      var fechaNacimiento = document.getElementById("fechaNacimiento").value;
+      var genero = document.getElementById("genero").value;
+      var direccion = document.getElementById("direccion").value;
+      var telefono = document.getElementById("telefono").value;
+      var correo = document.getElementById("correo").value;
+
+      // Construir el mensaje con los datos del paciente
+      var mensaje = "Información del Paciente:" + "<br>" +
+                    "Nombre: " + nombre + "<br>" +
+                    "Fecha de Nacimiento: " + fechaNacimiento + "<br>" +
+                    "Género: " + genero + "<br>" +
+                    "Dirección: " + direccion + "<br>" +
+                    "Teléfono: " + telefono + "<br>" +
+                    "Correo Electrónico: " + correo;
+
+      // Mostrar los datos en un elemento div en el documento
+      document.getElementById("datosPaciente").innerHTML = mensaje;
+    }
+  </script>
+</head>
+<body>
+  <h1>Formulario de Información del Paciente</h1>
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required><br>
+
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" required><br>
+
+    <label for="genero">Género:</label>
+    <select id="genero" required>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+      <option value="Otro">Otro</option>
+    </select><br>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" required><br>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" required><br>
+
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" required><br>
+
+    <button type="button" onclick="imprimirDatos()">Finalizar</button>
+  </form>
+
+  <div id="datosPaciente"></div>
+</body>
+</html>

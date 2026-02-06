@@ -219,13 +219,21 @@
 				<div class="row">
 					<div class="col-md-5 mx-auto text-center pt-5">
 						<h3>Por favor considera suscribirte a nuestro Newsletter para mantenerte actualizado sobre nosotros.</h3>
-						<form class="my-4">
+						<form id="newsletter-form-index" class="my-4">
 							<div class="input-group shadow">
-								<input class="form-control form-control-lg text-muted border-end-0 rounded-0 border-0 bg-white mb-0" type="text" name="search" placeholder="Ingresa tu Correo Electronico...">
-								<button type="button" class="btn btn-grad btn-lg rounded-0 m-0">
+								<input 
+									type="email" 
+									name="email" 
+									id="newsletter-email-index"
+									class="form-control form-control-lg text-muted border-end-0 rounded-0 border-0 bg-white mb-0" 
+									placeholder="Ingresa tu Correo Electronico..." 
+									required>
+								<input type="hidden" name="fuente" value="index">
+								<button type="submit" class="btn btn-grad btn-lg rounded-0 m-0">
 									<span><i class="far fa-paper-plane m-0"></i></span>
 								</button>
 							</div>
+							<div id="newsletter-message-index" class="mt-2 small"></div>
 						</form>
 						<div class="copyright-text">©2026 All Rights Reserved by <a href="#!"> Somos Mobility</a></div>
 					</div>
@@ -248,6 +256,57 @@
 	
 	<!--Template Functions-->
 	<script src="assets/js/functions.js"></script>
+	
+	<!-- Newsletter subscription handler -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const formIndex = document.getElementById('newsletter-form-index');
+			if (formIndex) {
+				formIndex.addEventListener('submit', function(e) {
+					e.preventDefault();
+					handleNewsletterSubmit(this, 'newsletter-message-index');
+				});
+			}
+		});
+
+		function handleNewsletterSubmit(form, messageId) {
+			const formData = new FormData(form);
+			const messageDiv = document.getElementById(messageId);
+			const submitButton = form.querySelector('button[type="submit"]');
+			const originalText = submitButton.innerHTML;
+			
+			// Deshabilitar botón
+			submitButton.disabled = true;
+			submitButton.innerHTML = '<span><i class="fas fa-spinner fa-spin"></i></span>';
+			messageDiv.textContent = '';
+			messageDiv.className = 'mt-2 small';
+			
+			fetch('assets/include/newsletter-subscribe.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+				if (data.success) {
+					messageDiv.textContent = data.message;
+					messageDiv.className = 'mt-2 small text-success';
+					form.reset();
+				} else {
+					messageDiv.textContent = data.message || 'Error al suscribirte. Intenta más tarde.';
+					messageDiv.className = 'mt-2 small text-danger';
+				}
+			})
+			.catch(error => {
+				console.error('Error:', error);
+				messageDiv.textContent = 'Error de conexión. Intenta más tarde.';
+				messageDiv.className = 'mt-2 small text-danger';
+			})
+			.finally(() => {
+				submitButton.disabled = false;
+				submitButton.innerHTML = originalText;
+			});
+		}
+	</script>
 	
 </body>
 </html>

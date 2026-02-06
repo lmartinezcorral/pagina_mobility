@@ -52,6 +52,7 @@
 					<h1 class="display-4 fw-bold text-grad">Algo emocionante esta en camino!</h1>
 					<p>Mobility es la plataforma sobre Salud, Bienestar y Calidad de Vida por eso nos especializamos en ofrecer servicios de tres áreas principales: <strong> Rehabilitación Física, Entrenamiento Personalizado y cuidados de Enfermería.</strong>
 					</p>
+					<a class="btn btn-dark mt-3" href="index.html">Volver al inicio</a>
 				</div>
 			</div>
 			<div class="row">
@@ -67,12 +68,20 @@
 						</div>
 					</div>
 					<!-- subscribe form-->
-					<form class="mt-4">
+					<form id="newsletter-form-maintenance" class="mt-4">
 						<p>Por Favor considera suscribirte a nuestro Newsletter para mantenerte actualizado sobre nosotros.</p>
 						<div class="input-group">
-							<input class="form-control bg-transparent rounded me-2 py-0 mb-0" type="text" placeholder="Ingresa tu correo elctronico...">
-							<button class="btn btn-dark rounded m-0">Notificame!</button>
+							<input 
+								type="email" 
+								name="email" 
+								id="newsletter-email-maintenance"
+								class="form-control bg-transparent rounded me-2 py-0 mb-0" 
+								placeholder="Ingresa tu correo electronico..." 
+								required>
+							<input type="hidden" name="fuente" value="maintenance">
+							<button type="submit" class="btn btn-dark rounded m-0">Notificame!</button>
 						</div>
+						<div id="newsletter-message-maintenance" class="mt-2 small"></div>
 					</form>
 					<!-- social icons -->
 					<ul class="social-icons round light si-colored-bg-on-hover text-center mt-5">
@@ -94,8 +103,59 @@
 	<!--Vendors-->
 	<script src="assets/vendor/aos/aos.js"></script>
 
-	<!--Template Functions-->
-	<script src="assets/js/functions.js"></script>
+<!--Template Functions-->
+<script src="assets/js/functions.js"></script>
+
+<!-- Newsletter subscription handler -->
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const formMaintenance = document.getElementById('newsletter-form-maintenance');
+		if (formMaintenance) {
+			formMaintenance.addEventListener('submit', function(e) {
+				e.preventDefault();
+				handleNewsletterSubmit(this, 'newsletter-message-maintenance');
+			});
+		}
+	});
+
+	function handleNewsletterSubmit(form, messageId) {
+		const formData = new FormData(form);
+		const messageDiv = document.getElementById(messageId);
+		const submitButton = form.querySelector('button[type="submit"]');
+		const originalText = submitButton.innerHTML;
+		
+		// Deshabilitar botón
+		submitButton.disabled = true;
+		submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+		messageDiv.textContent = '';
+		messageDiv.className = 'mt-2 small';
+		
+		fetch('assets/include/newsletter-subscribe.php', {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				messageDiv.textContent = data.message;
+				messageDiv.className = 'mt-2 small text-success';
+				form.reset();
+			} else {
+				messageDiv.textContent = data.message || 'Error al suscribirte. Intenta más tarde.';
+				messageDiv.className = 'mt-2 small text-danger';
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			messageDiv.textContent = 'Error de conexión. Intenta más tarde.';
+			messageDiv.className = 'mt-2 small text-danger';
+		})
+		.finally(() => {
+			submitButton.disabled = false;
+			submitButton.innerHTML = originalText;
+		});
+	}
+</script>
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 <?php
 // Newsletter subscription endpoint
-// NOTA: Este archivo define la lógica básica. Las credenciales reales de BD
-// deben moverse a una configuración segura fuera del repositorio antes de producción.
+// Credenciales en config.php (no versionado, ver config.example.php).
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -12,12 +11,20 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Configuración de BD (PLACEHOLDER - NO USAR EN PRODUCCIÓN SIN MOVER CREDENCIALES)
-$db_host = '192.168.0.11';      // ThinkCenter
-$db_port = '5432';
-$db_name = 'somosmobility';
-$db_user = 'somosmobility';
-$db_pass = 'CAMBIAR_POR_PASSWORD_SEGURO'; // TODO: mover a archivo de config no versionado
+// Cargar configuración (config.php en .gitignore; copiar desde config.example.php)
+$configFile = __DIR__ . '/config.php';
+if (!is_file($configFile) || !is_readable($configFile)) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'No se pudo conectar al servidor de datos. Intenta más tarde.']);
+    exit;
+}
+require_once $configFile;
+if (empty($db_host) || empty($db_name) || empty($db_user) || !isset($db_pass)) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'No se pudo conectar al servidor de datos. Intenta más tarde.']);
+    exit;
+}
+$db_port = $db_port ?? '5432';
 
 // Sanitizar inputs
 $email  = isset($_POST['email'])  ? trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)) : '';

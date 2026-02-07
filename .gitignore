@@ -1,0 +1,14 @@
+# Credenciales y configuración local — NUNCA versionar
+html/assets/include/config.php
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs y caché (si se generan en el repo)
+*.log
+.cache/

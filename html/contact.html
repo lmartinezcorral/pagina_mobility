@@ -59,34 +59,15 @@
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
 						<!-- Menu item 1 servicios-->
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle " href="#" id="demosMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICIOS</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="demosMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICIOS</a>
                             <div class="dropdown-menu pb-3 pb-lg-0 dropdown-menu-end" aria-labelledby="demosMenu">
                                 <div class="d-block d-sm-flex">
                                     <ul class="list-unstyled w-100 w-sm-30 pe-0 pe-lg-2">
                                         <li class="dropdown-header">Terapia Física y Rehabilitación</li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-ortopedica.html">Fisioterapia Ortopédica</a> </li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-neurologica.html">Fisioterapia Neurològica</a> </li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-deportiva.html">Fisioterapia Deportiva</a> </li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-geriatrica.html">Fisioterapia Geriátrica</a> </li>
-                                        <li> <a class="dropdown-item" href="terapia-ocupacional.html">Terapia Ocupacional</a> </li>
-                                   
-									
-										<li class="dropdown-header mt-3 mt-sm-0">Cuidados de Enfermería a Domicilio </li>
-										<li> <a class="dropdown-item" href="cuidado-adulto-mayor.html">Cuidado del Adulto mayor</a> </li>
-										<li> <a class="dropdown-item" href="cuidados-paliativos.html">Cuidados Paliativos</a> </li>
-										<li> <a class="dropdown-item" href="aseo-movilizacion-transferencias.html">Aseo, Movilización y transferencias</a> </li>
-										<li> <a class="dropdown-item" href="enfermeria-especializada.html">Atención de enfermería especializada</a> </li>
-									
-                                   
-										<li class="dropdown-header mt-3 mt-sm-0">Salud y Estilo de Vida </li>
-										<li> <a class="dropdown-item" href="entrenamiento-personalizado.html">Entrenamiento Personalizado</a> </li>
-										<li> <a class="dropdown-item" href="ejercicio-terapeutico.html">Ejercicio Terapeutico</a> </li>
-										<li> <a class="dropdown-item" href="performance-deportivo.html">Perfomance Deportivo</a> </li>
-										<li> <a class="dropdown-item" href="asesoria-nutricional.html">Asesoría Nutricional</a> </li>
-									</ul>
-								</div>
-								<!-- barra eslogan -->
+                                        <li><a class="dropdown-item" href="terapia-fisica-domicilio.html">Terapia Física a Domicilio</a></li>
+                                    </ul>
+                                </div>
 								<div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">
 									<div class="align-self-center me-4">
 										<h4 class="mb-0">SOMOS MOBILITY</h4>
@@ -95,20 +76,20 @@
 								</div>
 							</div>
 						</li>
-						<!-- Menu item 2 Blog-->
-						
-						<a class="nav-link" href="blog.html"  >BLOG</a>
-
-
+						<li class="nav-item">
+							<a class="nav-link" href="taller-masaje.html">TALLER DE MASAJE</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="blog.html">BLOG</a>
+						</li>
 						<!-- Menu item 6 Docs-->
-						<li class="nav-item dropdown">
+						<li class="nav-item dropdown active">
 							<a class="nav-link dropdown-toggle" href="#" id="docMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
 							<ul class="dropdown-menu" aria-labelledby="docMenu">
-								<li> <a class="dropdown-item" href="sobre-nosotros.html">¿QUIENES SOMOS?</a> </li>
-								<li> <a class="dropdown-item" href="team.html">Equipo</a> </li>
-								<li> <a class="dropdown-item" href="contact.html">Contacto</a> </li>
-								<li> <a class="dropdown-item" href="faq.html">FAQs</a> </li>
-								<li class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="sobre-nosotros.html">¿QUIENES SOMOS?</a></li>
+								<li><a class="dropdown-item" href="team.html">Equipo</a></li>
+								<li><a class="dropdown-item" href="contact.html">Contacto</a></li>
+								<li><a class="dropdown-item" href="faq.html">FAQs</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -165,7 +146,7 @@
 						<div class="all-text-white mb-4">
 							<div class="fs-4"><i class="ti-email"></i></div>
 							<h5 class="mb-2">E-mail</h5>
-							<p>contacto@somosmobility.com</p>
+							<p>somosmobility@gmail.com</p>
 						</div>
 						<!-- Phone -->
 						<div class="all-text-white">
@@ -186,35 +167,32 @@
 					<div class="h-100">
 						<h3>¿Tienes una pregunta?</h3>
 						<p>Estaremos encantados de escucharte y de trabajar contigo para encontrar la mejor solución para tus necesidades.</p>
-						<form class="contact-form needs-validation" id="contact-form" name="contactform" method="POST" action="assets/include/contact-action.php" novalidate>
-							<!-- Main form -->
+						<form class="contact-form needs-validation" id="contact-form" name="contactform" method="POST" novalidate>
 							<div class="row">
 								<div class="col-md-6">
-									<!-- name -->
 									<div class="mb-3 position-relative">
-										<input required id="con-name" name="name" type="text" class="form-control" placeholder="¿Cual es tu Nombre?">
+										<input required id="con-name" name="name" type="text" class="form-control" placeholder="¿Cuál es tu Nombre?">
 									</div>
 								</div>
 								<div class="col-md-6">
-									<!-- email -->
 									<div class="mb-3 position-relative">
 										<input required id="con-email" name="email" type="email" class="form-control" placeholder="E-mail">
 									</div>
 								</div>
 								<div class="col-md-12">
-									<!-- Subject -->
 									<div class="mb-3 position-relative">
-										<input required id="con-subject" name="subject" type="text" class="form-control" placeholder="Asunto">
+										<input id="con-subject" name="subject" type="text" class="form-control" placeholder="Asunto">
 									</div>
 								</div>
 								<div class="col-md-12">
-									<!-- Message -->
 									<div class="mb-3 position-relative">
 										<textarea required id="con-message" name="message" cols="40" rows="6" class="form-control" placeholder="Mensaje"></textarea>
 									</div>
 								</div>
-								<!-- submit button -->
-								<div class="col-md-12 d-grid"><button class="btn btn-dark m-0" type="submit">Enviar Mensaje</button></div>
+								<div class="col-md-12">
+									<div id="contact-message" class="mb-2 small"></div>
+									<div class="d-grid"><button class="btn btn-dark m-0" type="submit" id="contact-submit-btn">Enviar Mensaje</button></div>
+								</div>
 							</div>
 						</form>
 					</div>
@@ -249,7 +227,7 @@
 								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt">
 									<a class="navbar-link" href="tel:+526251386764"><strong>Tel:</strong> (625) 138-67-64</a></i> 
 								 </li>
-								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> contacto@somosmobility.com</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> somosmobility@gmail.com</li>
 								<li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
 									<p>Lun-Vi: <strong>09:00 - 19:00</strong> <br>Sat: <strong>09:00 - 16:00</strong> <br>Sun: <strong>Closed</strong></p>
 								</li>
@@ -267,7 +245,7 @@
 			<div class="container">
 				<div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-start">
 					<!-- copyright text -->
-					<div class="copyright-text">©2023 Todos los derechos Reservados para  <a href="index.html"> somosmobility.com</a></div>
+					<div class="copyright-text">©2026 Todos los derechos reservados <a href="index.html">somosmobility.com</a></div>
 					<!-- copyright links-->
 
 					<!-- social icons  -->
@@ -300,5 +278,49 @@
 
 	<!--Template Functions-->
 	<script src="assets/js/functions.js"></script>
+	<!-- Contact form AJAX handler -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const form = document.getElementById('contact-form');
+			if (form) {
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+					const formData = new FormData(form);
+					const messageDiv = document.getElementById('contact-message');
+					const btn = document.getElementById('contact-submit-btn');
+					const originalText = btn.innerHTML;
+
+					btn.disabled = true;
+					btn.innerHTML = '<span><i class="fas fa-spinner fa-spin"></i> Enviando...</span>';
+					messageDiv.textContent = '';
+					messageDiv.className = 'mb-2 small';
+
+					fetch('assets/include/contact-action.php', {
+						method: 'POST',
+						body: formData
+					})
+					.then(response => response.json())
+					.then(data => {
+						if (data.success) {
+							messageDiv.textContent = data.message;
+							messageDiv.className = 'mb-2 small text-success';
+							form.reset();
+						} else {
+							messageDiv.textContent = data.message || 'Error al enviar. Intenta más tarde.';
+							messageDiv.className = 'mb-2 small text-danger';
+						}
+					})
+					.catch(function() {
+						messageDiv.textContent = 'Error de conexión. Intenta más tarde o escríbenos a somosmobility@gmail.com';
+						messageDiv.className = 'mb-2 small text-danger';
+					})
+					.finally(function() {
+						btn.disabled = false;
+						btn.innerHTML = originalText;
+					});
+				});
+			}
+		});
+	</script>
     </body>
 </html>

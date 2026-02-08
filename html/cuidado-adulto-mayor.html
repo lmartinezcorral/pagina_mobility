@@ -1,3 +1,4 @@
+<?php if (!defined('SITE_ROOT')) define('SITE_ROOT', __DIR__); ?>
 <!doctype html>
 <html lang="es">
     <head>
@@ -42,87 +43,7 @@
         <div class="preloader">
             <img src="assets/images/preloader.svg" alt="Pre-loader">
         </div>
-        <header class="header-static navbar-sticky navbar-light">
-            		<!-- Logo Nav Start -->
-		<nav class="navbar navbar-expand-lg">
-			<div class="container">
-				<!-- Logo -->
-				<a class="navbar-brand" href="index.html">
-					<!-- Logo -->
-					<img class="navbar-brand-item" src="assets/images/logos_mobility/mobility-M.png" alt="Logo">
-				</a>
-				<!-- Menu opener button -->
-				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- Main Menu Start -->
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
-						<!-- Menu item 1 servicios-->
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle " href="#" id="demosMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICIOS</a>
-                            <div class="dropdown-menu pb-3 pb-lg-0 dropdown-menu-end" aria-labelledby="demosMenu">
-                                <div class="d-block d-sm-flex">
-                                    <ul class="list-unstyled w-100 w-sm-30 pe-0 pe-lg-2">
-                                        <li class="dropdown-header">Terapia Física y Rehabilitación</li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-ortopedica.html">Fisioterapia Ortopédica</a> </li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-neurologica.html">Fisioterapia Neurològica</a> </li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-deportiva.html">Fisioterapia Deportiva</a> </li>
-                                        <li> <a class="dropdown-item" href="fisioterapia-geriatrica.html">Fisioterapia Geriátrica</a> </li>
-                                        <li> <a class="dropdown-item" href="terapia-ocupacional.html">Terapia Ocupacional</a> </li>
-                                   
-									
-										<li class="dropdown-header mt-3 mt-sm-0">Cuidados de Enfermería a Domicilio </li>
-										<li> <a class="dropdown-item" href="cuidado-adulto-mayor.html">Cuidado del Adulto mayor</a> </li>
-										<li> <a class="dropdown-item" href="cuidados-paliativos.html">Cuidados Paliativos</a> </li>
-										<li> <a class="dropdown-item" href="aseo-movilizacion-transferencias.html">Aseo, Movilización y transferencias</a> </li>
-										<li> <a class="dropdown-item" href="enfermeria-especializada.html">Atención de enfermería especializada</a> </li>
-									
-                                   
-										<li class="dropdown-header mt-3 mt-sm-0">Salud y Estilo de Vida </li>
-										<li> <a class="dropdown-item" href="entrenamiento-personalizado.html">Entrenamiento Personalizado</a> </li>
-										<li> <a class="dropdown-item" href="ejercicio-terapeutico.html">Ejercicio Terapeutico</a> </li>
-										<li> <a class="dropdown-item" href="performance-deportivo.html">Perfomance Deportivo</a> </li>
-										<li> <a class="dropdown-item" href="asesoria-nutricional.html">Asesoría Nutricional</a> </li>
-									</ul>
-								</div>
-								<!-- barra eslogan -->
-								<div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">
-									<div class="align-self-center me-4">
-										<h4 class="mb-0">SOMOS MOBILITY</h4>
-										<p class="mb-0 small">¡Vive la Vida en Movimiento!</p>
-									</div>
-								</div>
-							</div>
-						</li>
-						<!-- Menu item 2 Blog-->
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="blog.html" >BLOG</a>
-						</li>
-
-						<!-- Menu item 6 Docs-->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="docMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
-							<ul class="dropdown-menu" aria-labelledby="docMenu">
-								<li> <a class="dropdown-item" href="sobre-nosotros.html">¿QUIENES SOMOS?</a> </li>
-								<li> <a class="dropdown-item" href="team.html">Equipo</a> </li>
-								<li> <a class="dropdown-item" href="contact.html">Contacto</a> </li>
-								<li> <a class="dropdown-item" href="faq.html">FAQs</a> </li>
-								<li class="dropdown-divider"></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<!-- Main Menu End -->
-				<!-- Header Extras Start-->
-				<div class="navbar-nav">
-
-				</div>
-				<!-- Header Extras End-->
-			</div>
-		</nav>
-		<!-- Logo Nav End -->
-        </header>
+        <?php $header_variant = 'inner'; include (defined('SITE_ROOT') ? SITE_ROOT : __DIR__) . '/assets/include/header.php'; ?>
 	<!-- =======================
 	Main Banner -->
 	<section>

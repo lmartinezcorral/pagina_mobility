@@ -1,0 +1,50 @@
+# Somos Mobility - Entorno reproducible (Win / WSL / Linux / Lenovo)
+# Igual que producción: Apache + PHP, .htaccess activo, includes PHP en .html
+#
+# Uso:
+#   docker compose up --build     # Construir y levantar → http://localhost:8080
+#   docker compose up -d          # En segundo plano
+#   docker compose down           # Parar y quitar contenedores
+#
+# Newsletter: con el servicio 'db' el newsletter funciona en Docker.
+# Sin 'db' (o si se quita), usar config.php apuntando a ThinkCenter (solo si la red lo alcanza).
+#
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      # Montar código para desarrollo (cambios sin reconstruir)
+      - ./html:/var/www/html:ro
+    environment:
+      # BD para newsletter en Docker (prioridad sobre config.php)
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: somosmobility
+      DB_USER: somosmobility
+      DB_PASS: somosmobility_dev
+    depends_on:
+      db:
+        condition: service_healthy
+    # Opcional: mismo usuario que el host para evitar problemas de permisos
+    # user: "${UID:-33}:${GID:-33}"
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: somosmobility
+      POSTGRES_USER: somosmobility
+      POSTGRES_PASSWORD: somosmobility_dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init-newsletter.sql:/docker-entrypoint-initdb.d/init-newsletter.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U somosmobility -d somosmobility"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+volumes:
+  postgres_data:

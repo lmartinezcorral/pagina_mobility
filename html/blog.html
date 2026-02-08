@@ -1,12 +1,13 @@
+<?php if (!defined('SITE_ROOT')) define('SITE_ROOT', __DIR__); ?>
 <!doctype html>
 <html lang="es">
 <head>
-	<title>SOMOS MOBILITY | "VIVE LA VIDA EN MOVIMIENTO"</title>
+	<title>Blog | Somos Mobility - Vive la Vida en Movimiento</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="somosmobility.com">
-	<meta name="description" content="Pagina de mantenimiento ">
+	<meta name="description" content="Blog de Somos Mobility. Consejos de salud, bienestar, rehabilitación física y terapia.">
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="assets/images/mobility.ico">
@@ -18,7 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
 	<link rel="stylesheet" type="text/css" href="assets/vendor/themify-icons/css/themify-icons.css" />
 	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css" />
-	<link rel="stylesheet" type="text/css" href="assets/vendor/aos/aos.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
@@ -30,9 +32,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-KVPX64M2');</script>
 	<!-- End Google Tag Manager -->
-
 </head>
-
 <body>
 	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVPX64M2"
@@ -43,38 +43,65 @@
 		<img src="assets/images/preloader.svg" alt="Pre-loader">
 	</div>
 
-	<!-- =======================
-	maintenance mode -->
-	<section>
+	<?php $header_variant = 'inner'; include (defined('SITE_ROOT') ? SITE_ROOT : __DIR__) . '/assets/include/header.php'; ?>
+
+	<!-- Banner -->
+	<div class="innerpage-banner center bg-overlay-dark-7 py-7" style="background:url(assets/images/bg/04.jpg) no-repeat; background-size:cover; background-position: center center;">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 mx-auto text-center">
-					<h1 class="display-4 fw-bold text-grad">Algo emocionante esta en camino!</h1>
-					<p>Mobility es la plataforma sobre Salud, Bienestar y Calidad de Vida por eso nos especializamos en ofrecer servicios de tres áreas clave Rehabilitación Física, Entrenamiento Personalizado y cuidados de Enfermería.
-					</p>
+			<div class="row all-text-white">
+				<div class="col-md-8 col-lg-6 mx-auto text-center py-5">
+					<h1 class="fw-bold">Blog</h1>
+					<p class="mb-0">Consejos de salud, bienestar y movimiento</p>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<!-- Contenido placeholder -->
+	<section class="py-8">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="progress-text-in progress-grad mb-0 mb-md-4">
-						<!-- progress item -->
-						<div class="progress-item">
-							<p>Lanzamiento en progreso </p>
-							<div class="progress">
-								<div class="progress-bar aos aos-init" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%"><span class="progress-percent">85%</span>
-								</div>
-							</div>
+				<div class="col-12 col-lg-8 mx-auto text-center">
+					<h2 class="mb-4">Próximamente</h2>
+					<p class="lead">Estamos preparando contenido de valor sobre rehabilitación física, terapia, bienestar y calidad de vida. Mientras tanto, síguenos en redes sociales para mantenerte informado.</p>
+					<a href="contact.html" class="btn btn-grad mt-3">Contáctanos</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer bg-light pt-3">
+		<div class="footer-content pb-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="widget">
+							<p class="mt-3">En Mobility nos esforzamos por ayudarte a alcanzar tus metas de salud y bienestar. Contáctanos para saber más.</p>
+							<p>"Vive la Vida en Movimiento"</p>
 						</div>
 					</div>
-					<!-- subscribe form-->
-					<form class="mt-4">
-						<p>Por Favor considera suscribirte a nuestro Newsletter para mantenerte actualizado sobre nosotros.</p>
-						<div class="input-group">
-							<input class="form-control bg-transparent rounded me-2 py-0 mb-0" type="text" placeholder="Ingresa tu correo elctronico...">
-							<button class="btn btn-dark rounded m-0">Notificame!</button>
+					<div class="col-md-4 col-sm-6">
+						<div class="widget address" style="background-image: url('assets/images/world-map.png'); background-position: 50% 20px; background-repeat: no-repeat; background-size: contain;">
+							<ul class="list-group list-group-borderless">
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-map-alt"></i>
+									<a class="navbar-link" href="https://goo.gl/maps/WKCfKeeAmyk4wrXf9">Av. Cardenales #4806, Cd. Cuauhtémoc Chi.</a>
+								</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt"></i>
+									<a class="navbar-link" href="tel:+526251386764"><strong>Tel:</strong> (625) 138-67-64</a>
+								</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> somosmobility@gmail.com</li>
+							</ul>
 						</div>
-					</form>
-					<!-- social icons -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divider mt-3"></div>
+		<div class="footer-copyright py-3">
+			<div class="container">
+				<div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-start">
+					<div class="copyright-text">©2026 Todos los derechos reservados <a href="index.html">somosmobility.com</a></div>
 					<ul class="social-icons round light si-colored-bg-on-hover text-center mt-5">
 						<li class="social-icons-item social-facebook"><a class="social-icons-link" href="https://www.facebook.com/somosmobility/"><i class="fab fa-facebook-f"></i></a></li>
 						<li class="social-icons-item social-instagram"><a class="social-icons-link" href="https://www.instagram.com/somosmobility/"><i class="fab fa-instagram"></i></a></li>
@@ -84,18 +111,12 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- =======================
-	maintenance mode -->
+	</footer>
 
-	<!-- Bootstrap JS -->
+	<div><a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a></div>
+
 	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	
-	<!--Vendors-->
-	<script src="assets/vendor/aos/aos.js"></script>
-
-	<!--Template Functions-->
+	<script src="assets/vendor/glightbox/js/glightbox.js"></script>
 	<script src="assets/js/functions.js"></script>
-
 </body>
 </html>

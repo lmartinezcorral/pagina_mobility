@@ -11,14 +11,22 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Cargar configuración (config.php en .gitignore; copiar desde config.example.php)
-$configFile = __DIR__ . '/config.php';
-if (!is_file($configFile) || !is_readable($configFile)) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'No se pudo conectar al servidor de datos. Intenta más tarde.']);
-    exit;
+// Configuración: variables de entorno (Docker) tienen prioridad sobre config.php
+$db_host = getenv('DB_HOST');
+$db_port = getenv('DB_PORT');
+$db_name = getenv('DB_NAME');
+$db_user = getenv('DB_USER');
+$db_pass = getenv('DB_PASS');
+
+if (empty($db_host) || empty($db_name) || empty($db_user) || !isset($db_pass)) {
+    $configFile = __DIR__ . '/config.php';
+    if (!is_file($configFile) || !is_readable($configFile)) {
+        http_response_code(500);
+        echo json_encode(['success' => false, 'message' => 'No se pudo conectar al servidor de datos. Intenta más tarde.']);
+        exit;
+    }
+    require_once $configFile;
 }
-require_once $configFile;
 if (empty($db_host) || empty($db_name) || empty($db_user) || !isset($db_pass)) {
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => 'No se pudo conectar al servidor de datos. Intenta más tarde.']);

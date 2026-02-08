@@ -1,4 +1,8 @@
-<?php if (!defined('SITE_ROOT')) define('SITE_ROOT', __DIR__); ?>
+<?php
+if (!defined('SITE_ROOT')) {
+    define('SITE_ROOT', __DIR__);
+}
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -116,7 +120,7 @@
 							respaldado siempre por información científica verídica y actualizada,  
 							para cumplir con el objetivo de mejorar la calidad de vida de cada una de las personas con las que estamos en contacto. </p>
 						<p>
-							Sin mas que decir, nos emociona que consideres ser parte de parte de la comunidad de Somos Mobility, bienvenido y no olvides “Vive la Vida en Movimiento”
+							Sin mas que decir, nos emociona que consideres ser parte de parte de la comunidad de Somos Mobility, bienvenido y no olvides "Vive la Vida en Movimiento"
 						</p>
 						<div class="col-3 mx-auto">
 							<img src="assets/images/mockups/firma.png" alt="" >

@@ -1,6 +1,10 @@
 # Credenciales y configuración local — NUNCA versionar
 html/assets/include/config.php
 
+# Debug / tests locales
+html/test-php.html
+html/test-php.php
+
 # OS / IDE
 .DS_Store
 Thumbs.db

@@ -1,5 +1,10 @@
 # Habilitar el manejo de archivos PHP
 AddHandler application/x-httpd-php .php
 
+# Procesar HTML como PHP (para includes de header/footer)
+<FilesMatch "\.(html|htm)$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
 # Desactivar el seguimiento de archivos .htaccess
 Options -Indexes

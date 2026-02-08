@@ -121,7 +121,7 @@
 								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt">
 									<a class="navbar-link" href="tel:+526251386764"><strong>Tel:</strong> (625) 138-67-64</a></i> 
 								 </li>
-								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> contacto@somosmobility.com</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> somosmobility@gmail.com</li>
 								<li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
 									<p>Lun-Vi: <strong>09:00 - 19:00</strong> <br>Sat: <strong>09:00 - 16:00</strong> <br>Sun: <strong>Closed</strong></p>
 								</li>

@@ -92,7 +92,7 @@
 						<div class="all-text-white">
 							<div class="fs-4"><i class="ti-mobile"></i></div>
 							<h5 class="mb-2">Telefonos de contacto:</h5>
-							<a class="navbar-link" href="https://api.whatsapp.com/send?phone=526251164143&text=Hola%20me%20gustar%C3%ADa%20pedir%20informes%20sobre:%20"><strong>Tel:</strong> (625) 138-67-64</a>
+							<a class="navbar-link" href="https://api.whatsapp.com/send?phone=526251386764&text=Hola%20me%20gustar%C3%ADa%20pedir%20informes%20sobre:%20"><strong>Tel:</strong> (625) 138-67-64</a>
 						</div>
 					</div>
 				</div>

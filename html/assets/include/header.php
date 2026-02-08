@@ -12,7 +12,7 @@ $header_class = $is_home ? 'navbar-sticky navbar-transparent navbar-primary' : '
 $logo_src = $is_home ? 'assets/images/logo-white.svg' : 'assets/images/logos_mobility/mobility-M.png';
 $logo_alt = 'Somos Mobility';
 
-$is_servicios = ($current_base === 'terapia-fisica-domicilio');
+$is_servicios = in_array($current_base, ['fisioterapia', 'terapia-fisica-domicilio', 'masajes', 'fisioterapia-ortopedica', 'fisioterapia-neurologica', 'fisioterapia-deportiva', 'fisioterapia-geriatrica', 'terapia-ocupacional'], true);
 $is_taller = ($current_base === 'taller-masaje');
 $is_blog = ($current_base === 'blog');
 $is_nosotros = in_array($current_base, ['sobre-nosotros', 'nuestra_historia', 'team', 'contact', 'faq'], true);
@@ -33,8 +33,9 @@ $is_nosotros = in_array($current_base, ['sobre-nosotros', 'nuestra_historia', 't
                         <div class="dropdown-menu pb-3 pb-lg-0 dropdown-menu-end" aria-labelledby="demosMenu">
                             <div class="d-block d-sm-flex">
                                 <ul class="list-unstyled w-100 w-sm-30 pe-0 pe-lg-2">
-                                    <li class="dropdown-header">Terapia Física y Rehabilitación</li>
+                                    <li><a class="dropdown-item" href="fisioterapia.html">Fisioterapia</a></li>
                                     <li><a class="dropdown-item" href="terapia-fisica-domicilio.html">Terapia Física a Domicilio</a></li>
+                                    <li><a class="dropdown-item" href="masajes.html">Dar masajes</a></li>
                                 </ul>
                             </div>
                             <div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">

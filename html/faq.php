@@ -95,7 +95,7 @@
 				<div class="col-md-4 sidebar">
 					<div class="widget bg-light p-3 border-0 rounded">
 						<h4>¿Tienes Alguna Pregunta? </h4>
-						<p>Si tienes alguna duda o sugerencia, por favor escríbenos por WhatsApp al <a class="navbar-link" href="https://api.whatsapp.com/send?phone=526251164143&text=Hola%20me%20gustar%C3%ADa%20pedir%20informes%20sobre:%20"><strong>Cel:</strong> (625) 138-67-64</a> para mas información.</p> O contáctanos a través del correo electrónico <a class="text-primary" href="mailto:contact@somosmobility.com">contacto@somosmobility.com</a>
+						<p>Si tienes alguna duda o sugerencia, por favor escríbenos por WhatsApp al <a class="navbar-link" href="https://api.whatsapp.com/send?phone=526251386764&text=Hola%20me%20gustar%C3%ADa%20pedir%20informes%20sobre:%20"><strong>Cel:</strong> (625) 138-67-64</a> para más información.</p> O contáctanos a través del correo electrónico <a class="text-primary" href="mailto:somosmobility@gmail.com">somosmobility@gmail.com</a>
 					</div>
 				</div>
 				<!-- Sidebar end-->
@@ -128,7 +128,7 @@
 								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt">
 									<a class="navbar-link" href="tel:+526251386764"><strong>Tel:</strong> (625) 138-67-64</a></i> 
 								 </li>
-								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> contacto@somosmobility.com</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> somosmobility@gmail.com</li>
 								<li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
 									<p>Lun-Vi: <strong>09:00 - 19:00</strong> <br>Sat: <strong>09:00 - 16:00</strong> <br>Sun: <strong>Closed</strong></p>
 								</li>

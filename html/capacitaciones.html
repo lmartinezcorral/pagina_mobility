@@ -2,12 +2,12 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>Taller de Masaje | Somos Mobility</title>
+        <title>Capacitaciones | Somos Mobility</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="somosmobility.com">
-        <meta name="description" content="Taller de Masaje Terapéutico. Aprende técnicas esenciales. Somos Mobility - Vive la Vida en Movimiento">
+        <meta name="description" content="Capacitaciones y talleres en salud y bienestar. Taller de Masaje Terapéutico y más. Somos Mobility - Vive la Vida en Movimiento">
 
         <link rel="shortcut icon" href="assets/images/mobility.ico">
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700" rel="stylesheet">

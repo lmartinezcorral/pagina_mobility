@@ -13,7 +13,7 @@ $logo_src = $is_home ? 'assets/images/logo-white.svg' : 'assets/images/logos_mob
 $logo_alt = 'Somos Mobility';
 
 $is_servicios = in_array($current_base, ['fisioterapia', 'terapia-fisica-domicilio', 'masajes', 'fisioterapia-ortopedica', 'fisioterapia-neurologica', 'fisioterapia-deportiva', 'fisioterapia-geriatrica', 'terapia-ocupacional'], true);
-$is_taller = ($current_base === 'taller-masaje');
+$is_capacitaciones = ($current_base === 'capacitaciones');
 $is_blog = ($current_base === 'blog');
 $is_nosotros = in_array($current_base, ['sobre-nosotros', 'nuestra_historia', 'team', 'contact', 'faq'], true);
 ?>
@@ -35,7 +35,7 @@ $is_nosotros = in_array($current_base, ['sobre-nosotros', 'nuestra_historia', 't
                                 <ul class="list-unstyled w-100 w-sm-30 pe-0 pe-lg-2">
                                     <li><a class="dropdown-item" href="fisioterapia.html">Fisioterapia</a></li>
                                     <li><a class="dropdown-item" href="terapia-fisica-domicilio.html">Terapia Física a Domicilio</a></li>
-                                    <li><a class="dropdown-item" href="masajes.html">Dar masajes</a></li>
+                                    <li><a class="dropdown-item" href="masajes.html">Masajes</a></li>
                                 </ul>
                             </div>
                             <div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">
@@ -46,8 +46,8 @@ $is_nosotros = in_array($current_base, ['sobre-nosotros', 'nuestra_historia', 't
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item<?php echo $is_taller ? ' active' : ''; ?>">
-                        <a class="nav-link" href="taller-masaje.html">TALLER DE MASAJE</a>
+                    <li class="nav-item<?php echo $is_capacitaciones ? ' active' : ''; ?>">
+                        <a class="nav-link" href="capacitaciones.html">CAPACITACIONES</a>
                     </li>
                     <li class="nav-item<?php echo $is_blog ? ' active' : ''; ?>">
                         <a class="nav-link" href="blog.html">BLOG</a>

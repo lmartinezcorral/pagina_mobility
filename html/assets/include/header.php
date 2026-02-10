@@ -9,7 +9,7 @@ $header_variant = $header_variant ?? 'inner';
 
 $is_home = ($header_variant === 'home');
 $header_class = $is_home ? 'navbar-sticky navbar-transparent navbar-primary' : 'header-static navbar-sticky navbar-light';
-$logo_src = $is_home ? 'assets/images/logo-white.svg' : 'assets/images/logos_mobility/mobility-M.png';
+$logo_src = $is_home ? 'assets/images/logo-white.svg' : 'assets/images/logos_mobility/isologo_clr.png';
 $logo_alt = 'Somos Mobility';
 
 $is_servicios = in_array($current_base, ['fisioterapia', 'terapia-fisica-domicilio', 'masajes', 'fisioterapia-ortopedica', 'fisioterapia-neurologica', 'fisioterapia-deportiva', 'fisioterapia-geriatrica', 'terapia-ocupacional'], true);

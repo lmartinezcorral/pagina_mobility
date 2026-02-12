@@ -3,6 +3,11 @@
 Script de compresión de imágenes para Somos Mobility.
 Optimiza PNG, JPG y SVG sin pérdida perceptible de calidad.
 Objetivo: reducir tiempo de carga del sitio.
+
+Uso: python scripts/compress-images.py
+
+Nota: Los SVGs con imágenes embebidas (base64) pueden seguir siendo pesados.
+Para optimizarlos: convertir a PNG con herramientas externas (ej. Inkscape, cairosvg).
 """
 import os
 import re

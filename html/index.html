@@ -227,17 +227,18 @@
 			.then(response => response.json())
 			.then(data => {
 				if (data.success) {
-					messageDiv.textContent = data.message;
-					messageDiv.className = 'mt-2 small text-success';
-					form.reset();
+					window.location.href = 'thank-you.html?source=newsletter';
+					return;
 				} else {
-					messageDiv.textContent = data.message || 'Error al suscribirte. Intenta más tarde.';
+					form.reset();
+					messageDiv.textContent = (data.message || 'Error al suscribirte.') + ' Por favor, inténtalo de nuevo.';
 					messageDiv.className = 'mt-2 small text-danger';
 				}
 			})
 			.catch(error => {
 				console.error('Error:', error);
-				messageDiv.textContent = 'Error de conexión. Intenta más tarde.';
+				form.reset();
+				messageDiv.textContent = 'Error de conexión. Por favor, inténtalo de nuevo.';
 				messageDiv.className = 'mt-2 small text-danger';
 			})
 			.finally(() => {

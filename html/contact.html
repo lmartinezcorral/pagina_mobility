@@ -242,16 +242,17 @@
 					.then(response => response.json())
 					.then(data => {
 						if (data.success) {
-							messageDiv.textContent = data.message;
-							messageDiv.className = 'mb-2 small text-success';
-							form.reset();
+							window.location.href = 'thank-you.html?source=contact';
+							return;
 						} else {
-							messageDiv.textContent = data.message || 'Error al enviar. Intenta más tarde.';
+							form.reset();
+							messageDiv.textContent = (data.message || 'Error al enviar.') + ' Por favor, inténtalo de nuevo.';
 							messageDiv.className = 'mb-2 small text-danger';
 						}
 					})
 					.catch(function() {
-						messageDiv.textContent = 'Error de conexión. Intenta más tarde o escríbenos a somosmobility@gmail.com';
+						form.reset();
+						messageDiv.textContent = 'Error de conexión. Por favor, inténtalo de nuevo o escríbenos a somosmobility@gmail.com';
 						messageDiv.className = 'mb-2 small text-danger';
 					})
 					.finally(function() {

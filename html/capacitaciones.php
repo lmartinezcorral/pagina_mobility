@@ -2,12 +2,12 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <title>Capacitaciones | Taller de Masaje Terapéutico | Somos Mobility</title>
+    <title>Capacitaciones | Taller Intensivo de Masaje | Somos Mobility</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="somosmobility.com">
-    <meta name="description" content="Capacitaciones en salud y bienestar. Taller de Masaje Terapéutico Básico con Somos Mobility + Therapie Zentrum. 28 y 29 feb 2026. Inscríbete.">
+    <meta name="description" content="Capacitaciones en salud y bienestar. Taller Intensivo de Masaje con Somos Mobility + Therapie Zentrum. 28 feb y 1 mar 2026. Inscríbete.">
 
     <link rel="shortcut icon" href="assets/images/mobility.ico">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700" rel="stylesheet">
@@ -62,7 +62,7 @@
                         <li class="list-group-item"><i class="fa fa-check"></i>Certificado de participación</li>
                         <li class="list-group-item"><i class="fa fa-check"></i>Cupo limitado a 16 personas</li>
                     </ul>
-                    <p class="text-muted small mb-0">Fechas: 28 y 29 de febrero 2026 · Therapie Zentrum</p>
+                    <p class="text-muted small mb-0">Fechas: 28 de febrero y 1 de marzo 2026 · Therapie Zentrum</p>
                 </div>
             </div>
 

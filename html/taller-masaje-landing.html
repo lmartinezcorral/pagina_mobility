@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/vendor/themify-icons/css/themify-icons.css" />
     <link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+    <!-- glightbox omitido: landing no usa galería -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
     <!-- Google Tag Manager - Embudo de ventas -->
@@ -35,6 +35,10 @@
         .floating-cta .btn-reserva { background: linear-gradient(135deg, #3c58a1 0%, #2d4277 100%); color: #fff; border: none; }
         .floating-cta .btn-reserva:hover { color: #fff; opacity: 0.95; }
         @media (max-width: 576px) { .floating-cta { right: 12px; bottom: 16px; } .floating-cta .btn { font-size: 0.9rem; padding: 10px 14px; } }
+        /* Preloader ligero: spinner CSS (sin SVG 673KB) */
+        .preloader-wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+        .preloader-spinner { width: 40px; height: 40px; border: 3px solid #e9ecef; border-top-color: #3c58a1; border-radius: 50%; animation: preloader-spin 0.8s linear infinite; }
+        @keyframes preloader-spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -42,7 +46,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVPX64M2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="preloader">
-        <img src="assets/images/preloader.svg" alt="Pre-loader">
+        <div class="preloader-wrap"><div class="preloader-spinner" aria-hidden="true"></div></div>
     </div>
 
     <!-- SIN HEADER - Landing oculta solo para ads -->
@@ -94,7 +98,7 @@
             <!-- Imagen + Qué aprenderás -->
             <div class="row mb-5">
                 <div class="col-md-6 mb-4">
-                    <img src="assets/images/taller-masaje/masaje_6_4a5.png" alt="Taller de Masaje" class="img-fluid rounded">
+                    <img src="assets/images/taller-masaje/masaje_6_4a5.png" alt="Taller de Masaje" class="img-fluid rounded" width="600" height="400">
                 </div>
                 <div class="col-md-6 mb-4">
                     <h3 class="mb-4">Qué aprenderás</h3>
@@ -240,7 +244,7 @@
             <!-- Separador -->
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <img src="assets/images/taller-masaje/masaje_14_hztal.png" alt="Masaje terapéutico" class="img-fluid rounded">
+                    <img src="assets/images/taller-masaje/masaje_14_hztal.png" alt="Masaje terapéutico" class="img-fluid rounded" loading="lazy" width="800" height="400">
                 </div>
             </div>
 
@@ -280,7 +284,7 @@
     </div>
 
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.js"></script>
+    <!-- glightbox omitido: landing no usa galería -->
     <script src="assets/js/functions.js"></script>
 
     <!-- Tracking embudo + A/B test -->

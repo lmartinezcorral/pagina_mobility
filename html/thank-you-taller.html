@@ -1,0 +1,242 @@
+<?php if (!defined('SITE_ROOT')) define('SITE_ROOT', __DIR__); ?>
+<!doctype html>
+<html lang="es">
+<head>
+	<title>Registro confirmado | Taller de Masaje | Somos Mobility</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="author" content="somosmobility.com">
+	<meta name="description" content="Confirmación de pago y registro - Taller Intensivo de Masaje. Somos Mobility">
+
+	<link rel="shortcut icon" href="assets/images/mobility.ico">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/vendor/themify-icons/css/themify-icons.css" />
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KVPX64M2');</script>
+</head>
+<body>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVPX64M2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+	<div class="preloader">
+		<div class="preloader-wrap"><div class="preloader-spinner" aria-hidden="true"></div></div>
+	</div>
+
+	<?php $header_variant = 'inner'; include (defined('SITE_ROOT') ? SITE_ROOT : __DIR__) . '/assets/include/header.php'; ?>
+
+	<section class="py-9">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+
+					<!-- Bloque de confirmación según tipo de pago -->
+					<div id="confirm-block" class="text-center mb-5">
+						<i class="fas fa-check-circle display-1 text-success mb-4"></i>
+						<h1 class="display-5 fw-bold mb-3" id="confirm-title">¡Pago recibido!</h1>
+						<p class="lead" id="confirm-message">Hemos recibido tu pago vía PayPal. Tu registro está confirmado.</p>
+						<p class="text-muted small" id="confirm-detail"></p>
+					</div>
+
+					<!-- Cuestionario post-registro -->
+					<div class="card shadow-sm border-0 rounded-3">
+						<div class="card-body p-4 p-md-5">
+							<h3 class="mb-4">Datos para tu certificado</h3>
+							<p class="text-muted mb-4">Completa los siguientes datos para que tu certificado se emita correctamente.</p>
+
+							<form id="taller-registro-form" class="needs-validation" novalidate>
+								<input type="hidden" name="tipo_pago" id="tipo-pago" value="">
+								<div class="mb-3">
+									<label for="nombre-certificado" class="form-label">Nombre completo (tal cual aparecerá en el certificado) <span class="text-danger">*</span></label>
+									<input required type="text" class="form-control" id="nombre-certificado" name="nombre_certificado" placeholder="Ej: María Guadalupe Hernández López" maxlength="120">
+									<div class="invalid-feedback">Ingresa tu nombre completo.</div>
+								</div>
+								<div class="mb-3">
+									<label for="telefono" class="form-label">Número de teléfono (10 dígitos) <span class="text-danger">*</span></label>
+									<input required type="tel" class="form-control" id="telefono" name="telefono" placeholder="6251234567" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel">
+									<div class="invalid-feedback">Ingresa exactamente 10 dígitos numéricos.</div>
+									<div class="form-text">Solo números, sin espacios ni guiones.</div>
+								</div>
+								<div class="mb-3">
+									<label for="grado-academico" class="form-label">Grado académico / perfil del participante <span class="text-danger">*</span></label>
+									<select required class="form-select" id="grado-academico" name="grado_academico">
+										<option value="">Selecciona una opción</option>
+										<option value="Fisioterapeuta">Fisioterapeuta</option>
+										<option value="Masajista">Masajista</option>
+										<option value="Estudiante">Estudiante</option>
+										<option value="Entusiasta">Entusiasta</option>
+										<option value="Enfermero(a)">Enfermero(a)</option>
+										<option value="Médico">Médico</option>
+										<option value="Otro profesional de salud">Otro profesional de salud</option>
+										<option value="Otro">Otro</option>
+									</select>
+									<div class="invalid-feedback">Selecciona tu perfil.</div>
+								</div>
+								<div class="mb-4">
+									<label for="mensaje-opcional" class="form-label">Mensaje opcional</label>
+									<textarea class="form-control" id="mensaje-opcional" name="mensaje" rows="3" placeholder="Comentarios, alergias, necesidades especiales, etc." maxlength="500"></textarea>
+								</div>
+								<div id="taller-form-message" class="mb-2 small"></div>
+								<div class="d-grid">
+									<button class="btn btn-grad" type="submit" id="taller-submit-btn">Enviar datos</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="text-center mt-4">
+						<a href="https://api.whatsapp.com/send?phone=526251386764&text=Hola%2C%20acabo%20de%20registrarme%20al%20Taller%20de%20Masaje" class="btn btn-outline-success" target="_blank" rel="noopener">
+							<i class="fab fa-whatsapp me-2"></i> ¿Dudas? Escríbenos por WhatsApp
+						</a>
+						<a href="index.html" class="btn btn-outline-primary ms-2">Volver al inicio</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer bg-light pt-3">
+		<div class="footer-content pb-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="widget">
+							<p class="mt-3">En Mobility, nos esforzamos por ayudarte a alcanzar tus metas de salud, bienestar y calidad de vida.</p>
+							<p>"Vive la Vida en Movimiento"</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="widget address">
+							<ul class="list-group list-group-borderless">
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt"></i>
+									<a class="navbar-link" href="tel:+526251386764"><strong>Tel:</strong> (625) 138-67-64</a>
+								</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> somosmobility@gmail.com</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divider mt-3"></div>
+		<div class="footer-copyright py-3">
+			<div class="container text-center">
+				<div class="copyright-text">©2026 Somos Mobility · Taller Intensivo de Masaje</div>
+			</div>
+		</div>
+	</footer>
+
+	<div><a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a></div>
+
+	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/functions.js"></script>
+	<script>
+	(function() {
+		var params = new URLSearchParams(window.location.search);
+		var tipo = (params.get('tipo') || 'completo').toLowerCase();
+
+		var mensajes = {
+			anticipo: {
+				title: '¡Anticipo recibido!',
+				message: 'Hemos recibido tu pago de anticipo ($500) vía PayPal. Tu lugar está apartado.',
+				detail: 'Recuerda pagar el saldo restante antes del inicio del taller. Te contactaremos para coordinar.'
+			},
+			completo: {
+				title: '¡Pago completo recibido!',
+				message: 'Hemos recibido tu pago completo vía PayPal. Tu registro está confirmado.',
+				detail: 'Te esperamos el 28 de febrero y 1 de marzo. Revisa tu correo para más detalles.'
+			},
+			pareja: {
+				title: '¡Registro de pareja confirmado!',
+				message: 'Hemos recibido tu pago vía PayPal. Tu registro (promo pareja) está confirmado.',
+				detail: 'Te esperamos el 28 de febrero y 1 de marzo. Revisa tu correo para más detalles.'
+			},
+			grupo: {
+				title: '¡Registro de grupo confirmado!',
+				message: 'Hemos recibido tu pago vía PayPal. Tu registro (promo grupo 3+) está confirmado.',
+				detail: 'Te esperamos el 28 de febrero y 1 de marzo. Revisa tu correo para más detalles.'
+			},
+			pago_temprano: {
+				title: '¡Pago temprano recibido!',
+				message: 'Hemos recibido tu pago con descuento de pago temprano vía PayPal. Tu registro está confirmado.',
+				detail: 'Te esperamos el 28 de febrero y 1 de marzo.'
+			}
+		};
+
+		var m = mensajes[tipo] || mensajes.completo;
+		document.getElementById('confirm-title').textContent = m.title;
+		document.getElementById('confirm-message').textContent = m.message;
+		document.getElementById('confirm-detail').textContent = m.detail;
+		document.getElementById('tipo-pago').value = tipo;
+
+		// Teléfono: solo 10 dígitos numéricos
+		var telInput = document.getElementById('telefono');
+		telInput.addEventListener('input', function() {
+			this.value = this.value.replace(/\D/g, '').slice(0, 10);
+		});
+		telInput.addEventListener('keypress', function(e) {
+			if (!/\d/.test(e.key) && !e.ctrlKey && !e.metaKey && e.key !== 'Backspace') e.preventDefault();
+		});
+
+		// Envío del formulario
+		var form = document.getElementById('taller-registro-form');
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			if (!form.checkValidity()) {
+				form.classList.add('was-validated');
+				return;
+			}
+			var tel = document.getElementById('telefono').value;
+			if (tel.length !== 10) {
+				document.getElementById('telefono').classList.add('is-invalid');
+				return;
+			}
+
+			var formData = new FormData(form);
+			var messageDiv = document.getElementById('taller-form-message');
+			var btn = document.getElementById('taller-submit-btn');
+			var originalText = btn.innerHTML;
+
+			btn.disabled = true;
+			btn.innerHTML = '<span><i class="fas fa-spinner fa-spin"></i> Enviando...</span>';
+			messageDiv.textContent = '';
+			messageDiv.className = 'mb-2 small';
+
+			fetch('assets/include/taller-registro-action.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(function(r) { return r.json(); })
+			.then(function(data) {
+				if (data.success) {
+					messageDiv.textContent = '¡Datos guardados! Te contactaremos si es necesario.';
+					messageDiv.className = 'mb-2 small text-success';
+					form.reset();
+					document.getElementById('taller-registro-form').style.display = 'none';
+				} else {
+					messageDiv.textContent = (data.message || 'Error al enviar.') + ' Inténtalo de nuevo.';
+					messageDiv.className = 'mb-2 small text-danger';
+				}
+			})
+			.catch(function() {
+				messageDiv.textContent = 'Error de conexión. Escríbenos a somosmobility@gmail.com o por WhatsApp.';
+				messageDiv.className = 'mb-2 small text-danger';
+			})
+			.finally(function() {
+				btn.disabled = false;
+				btn.innerHTML = originalText;
+			});
+		});
+	})();
+	</script>
+</body>
+</html>
